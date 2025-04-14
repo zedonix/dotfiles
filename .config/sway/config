@@ -111,7 +111,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-mode Logout {
+mode "systemctl" {
     bindsym r exec systemctl reboot; mode default
     bindsym p exec systemctl poweroff; mode default
     bindsym e exec sway exit; mode default
@@ -119,7 +119,7 @@ mode Logout {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym Ctrl+Shift+l mode "Logout"
+bindsym Ctrl+Shift+l mode "systemctl"
 
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
