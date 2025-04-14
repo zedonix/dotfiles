@@ -10,6 +10,7 @@ export VISUAL=nvim
 alias l="eza -l --icons=always"
 alias ll="eza -la --icons=always"
 alias vi="nvim ~/vimwiki/index.md"
+alias ff="fastfetch"
 alias vim="nvim"
 alias nb="newsboat"
 alias pic="swayimg"
