@@ -19,4 +19,6 @@ alias record="asciinema rec"
 alias play="asciinema play"
 alias yt="yt-dlp"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+aliad grub-mkconfig="grub-mkconfig -o /boot/grub/grub.cfg"
+
 eval "$(fzf --bash)"
