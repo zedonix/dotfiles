@@ -22,6 +22,7 @@ exec wl-paste --type image --watch cliphist store
 
 exec mako
 exec sway-audio-idle-inhibit
+exec /usr/lib/polkit-kde-authentication-agent-1 &
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
     timeout 300 'swaymsg "output * power off"' \
