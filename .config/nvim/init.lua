@@ -77,9 +77,9 @@ function Format()
         if extension == "lua" then
         	Formatter = "stylua"
         elseif extension == "python" then
-        	Formatter = "ruff format"
-        elseif extension == "nix" then
-        	Formatter = "nixfmt"
+        	Formatter = "black"
+        elseif extension == "go" then
+        	Formatter = "gofumpt"
         elseif extension == "c" or extension == "cpp" then
         	Formatter = "clang-format"
         else
