@@ -157,7 +157,7 @@ output * bg ./arch.png fill
 input "type:pointer" accel_profile flat
 input "type:keyboard" xkb_options caps:swapescape
 
-# seat * hide_cursor 3000
+seat * hide_cursor 3000
 
 font pango: "Iosevka" Regular 9
 
