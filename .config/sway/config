@@ -38,7 +38,6 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway
 bindsym $mod+Return $term
 bindsym $mod+space $menu
 bindsym $mod+Shift+Return $browser
-bindsym $mod+Shift+p $browser --incognito
 bindsym $mod+e $fileBrowser
 
 bindsym $mod+p $paste
@@ -120,7 +119,7 @@ mode "systemctl" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym Ctrl+Shift+l mode "systemctl"
+bindsym $mod+Shift+p mode "systemctl"
 
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
