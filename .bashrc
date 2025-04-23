@@ -7,6 +7,8 @@ export XDG_CURRENT_DESKTOP=sway
 export EDITOR=nvim
 export VISUAL=nvim
 
+shopt -s checkwinsize
+
 alias l="eza -l --icons=always"
 alias ll="eza -la --icons=always"
 alias vi="nvim ~/vimwiki/index.md"
