@@ -22,6 +22,7 @@ exec wl-paste --type image --watch cliphist store
 
 exec dunst
 exec sway-audio-idle-inhibit
+exec swayosd-server
 exec /usr/lib/polkit-kde-authentication-agent-1 &
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
@@ -120,17 +121,17 @@ mode "systemctl" {
 }
 bindsym $mod+Shift+p mode "systemctl"
 
-bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 5
+bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -5
+bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
 
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessUp  exec swayosd-client --brightness +10
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness -10
 
 bar {
     position bottom
     mode hide
-    status_command ~/.config/sway/bar.sh
+    status_command while date +'[%a %d %b %I:%M:%S %p]'; do sleep 1; done
     colors {
         statusline #abb2bf
         background #1d202100
