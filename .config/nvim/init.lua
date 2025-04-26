@@ -81,9 +81,9 @@ end
 
 -- Keybindings
 Map('n', '<Leader>b', '<cmd>ls<CR>')
-Map('n', '<Leader>f', '<cmd>:18Lex<CR>')
+Map('n', '<Leader>s', '<cmd>:w<CR>')
 Map('n', '<Esc>', '<cmd>nohlsearch<CR>')
-Map('n', '<Leader>s', '<cmd>:FormatFile<CR>')
+Map('n', '<Leader>f', '<cmd>:FormatFile<CR>')
 Map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 Map('n', 'j', 'gj')
 Map('n', 'k', 'gk')
@@ -157,6 +157,6 @@ require('lazy').setup {
             }
             vim.g.vimwiki_global_ext = 0
         end,
-        keys = { "<leader>ww", "<leader>wt" },
+        keys = { '<leader>ww', '<leader>wt' },
     },
 }
