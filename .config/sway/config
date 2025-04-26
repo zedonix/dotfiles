@@ -144,7 +144,7 @@ bar {
 }
 bindsym $mod+m bar mode toggle
 
-output * bg ./arch.png fill
+output * bg ./archLogo.png fill
 
 ### Input Configuration
 # Example for configuring input devices
