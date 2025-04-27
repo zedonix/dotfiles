@@ -20,7 +20,7 @@ for_window [app_id="htop"] floating enable
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
 
-exec dunst
+exec mako
 exec sway-audio-idle-inhibit
 exec swayosd-server
 exec /usr/lib/polkit-kde-authentication-agent-1 &
