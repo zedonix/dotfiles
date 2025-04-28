@@ -12,16 +12,17 @@ shopt -s checkwinsize
 alias l="eza -l --icons=always"
 alias ll="eza -la --icons=always"
 alias ls='ls --color=auto'
+alias ip='ip -color=auto'
+alias ncdu='disk'
 alias vi="nvim ~/vimwiki/index.md"
 alias ff="fastfetch"
 alias vim="nvim"
 alias nb="newsboat"
-alias pic="swayimg"
+alias img="swayimg"
 alias record="asciinema rec"
 alias play="asciinema play"
 alias yt="yt-dlp"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias grub-mkconfig="grub-mkconfig -o /boot/grub/grub.cfg"
-alias ip='ip -color=auto'
 
 eval "$(fzf --bash)"

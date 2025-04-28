@@ -139,7 +139,7 @@ bar {
     mode hide
     status_command while date +'[%a %d %b %I:%M:%S %p]'; do sleep 1; done
     colors {
-        statusline #abb2bf
+        statusline #ffffff
         background #1d202100
         inactive_workspace #282c34 #282c34  #5c5c5c
         focused_workspace #458588 #458588 #ebdbb2
