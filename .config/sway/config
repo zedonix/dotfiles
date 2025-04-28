@@ -21,8 +21,10 @@ exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
 exec wl-clip-persist --clipboard both --reconnect-tries 0
 
+exec swaync
+bindsym $mod+Shift+n exec swaync-client -t -sw
 exec_always autotiling
-exec mako
+# exec mako
 exec sway-audio-idle-inhibit
 exec swayosd-server
 exec /usr/lib/polkit-kde-authentication-agent-1 &
