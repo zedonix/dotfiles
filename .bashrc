@@ -13,7 +13,7 @@ alias l="eza -l --icons=always"
 alias ll="eza -la --icons=always"
 alias ls='ls --color=auto'
 alias ip='ip -color=auto'
-alias ncdu='disk'
+alias disk='ncdu'
 alias vi="nvim ~/vimwiki/index.md"
 alias ff="fastfetch"
 alias vim="nvim"
