@@ -19,7 +19,9 @@ for_window [app_id="htop"] floating enable
 
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
+exec wl-clip-persist --clipboard both --reconnect-tries 0
 
+exec_always autotiling
 exec mako
 exec sway-audio-idle-inhibit
 exec swayosd-server
