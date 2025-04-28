@@ -1,4 +1,4 @@
-set $mod Mod4
+set $mod Mod1
 
 set $left h
 set $down j
@@ -15,16 +15,14 @@ set $paste exec cliphist list | fuzzel --dmenu --width=100 | cliphist decode | w
 set $screenshot exec shotman --capture
 set $htop $term -a 'htop' htop
 
-for_window [app_id="htop"] floating enable
+for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
 
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
 exec wl-clip-persist --clipboard both --reconnect-tries 0
 
 exec swaync
-bindsym $mod+Shift+n exec swaync-client -t -sw
 exec_always autotiling
-# exec mako
 exec sway-audio-idle-inhibit
 exec swayosd-server
 exec /usr/lib/polkit-kde-authentication-agent-1 &
@@ -43,6 +41,8 @@ bindsym $mod+Return $term
 bindsym $mod+space $menu
 bindsym $mod+Shift+Return $browser
 bindsym $mod+e $fileBrowser
+
+bindsym $mod+n exec swaync-client -t -sw
 
 bindsym $mod+p $paste
 bindsym control+Shift+escape $htop
@@ -135,11 +135,12 @@ bindsym XF86MonBrightnessDown exec swayosd-client --brightness -10
 bindsym --release Caps_Lock exec swayosd-client --caps-lock
 
 bar {
+    modifier Mod1
     position bottom
     mode hide
     status_command while date +'[%a %d %b %I:%M:%S %p]'; do sleep 1; done
     colors {
-        statusline #ffffff
+        statusline #ff0000
         background #1d202100
         inactive_workspace #282c34 #282c34  #5c5c5c
         focused_workspace #458588 #458588 #ebdbb2
