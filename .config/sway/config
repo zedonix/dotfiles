@@ -1,4 +1,4 @@
-set $mod Mod1
+set $mod Mod4
 
 set $left h
 set $down j
@@ -21,8 +21,10 @@ exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
 exec wl-clip-persist --clipboard both --reconnect-tries 0
 
-exec swaync
 exec_always autotiling
+
+exec swaync
+exec udiskie --notify
 exec sway-audio-idle-inhibit
 exec swayosd-server
 exec /usr/lib/polkit-kde-authentication-agent-1 &
@@ -135,10 +137,9 @@ bindsym XF86MonBrightnessDown exec swayosd-client --brightness -10
 bindsym --release Caps_Lock exec swayosd-client --caps-lock
 
 bar {
-    modifier Mod1
     position bottom
     mode hide
-    status_command while date +'[%a %d %b %I:%M:%S %p]'; do sleep 1; done
+    status_command ~/.config/sway/bar.sh
     colors {
         statusline #ff0000
         background #1d202100
