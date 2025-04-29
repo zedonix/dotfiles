@@ -164,7 +164,7 @@ output * bg ./archLogo.png fill
 input "type:pointer" accel_profile flat
 input "type:keyboard" xkb_options caps:swapescape
 
-seat * hide_cursor 3000
+bindsym $mod+q exec ~/.config/sway/hide.sh
 
 font pango: "Iosevka" Regular 9
 
