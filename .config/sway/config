@@ -12,7 +12,8 @@ set $fileBrowser exec pcmanfm
 
 set $paste exec cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy
 
-set $screenshot exec shotman --capture
+# set $screenshot exec shotman --capture
+set $screenshot exec flameshot
 set $htop $term -a 'htop' htop
 
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
@@ -23,11 +24,12 @@ exec wl-clip-persist --clipboard both --reconnect-tries 0
 
 exec_always autotiling
 
+exec flameshot
 exec swaync
 exec udiskie --notify
 exec sway-audio-idle-inhibit
 exec swayosd-server
-exec /usr/lib/polkit-kde-authentication-agent-1 &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
     timeout 300 'swaymsg "output * power off"' \
@@ -49,9 +51,11 @@ bindsym $mod+n exec swaync-client -t -sw
 bindsym $mod+p $paste
 bindsym control+Shift+escape $htop
 
-bindsym Print $screenshot region
-bindsym Shift+Print $screenshot output
-bindsym Ctrl+Print $screenshot window
+bindsym Print $screenshot gui -p ~/Pictures/Screenshots
+bindsym Ctrl+Print $screenshot full -c -p ~/Pictures/Screenshots
+# bindsym Print $screenshot region
+# bindsym Shift+Print $screenshot output
+# bindsym Ctrl+Print $screenshot window
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
