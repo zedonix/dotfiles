@@ -24,8 +24,9 @@ exec wl-clip-persist --clipboard both --reconnect-tries 0
 
 exec_always autotiling
 
-exec flameshot
+# exec flameshot
 exec swaync
+exec ~/.config/sway/network.sh
 exec udiskie --notify
 exec sway-audio-idle-inhibit
 exec swayosd-server
