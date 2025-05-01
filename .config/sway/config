@@ -146,7 +146,7 @@ bar {
     mode hide
     status_command ~/.config/sway/bar.sh
     colors {
-        statusline #ff0000
+        statusline #00FF00
         background #1d202100
         inactive_workspace #282c34 #282c34  #5c5c5c
         focused_workspace #458588 #458588 #ebdbb2
