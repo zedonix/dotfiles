@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- Arch Linux favicon (original color, SVG, CC0 license) -->
+  <link rel="icon" type="image/svg+xml" href="https://iconduck.com/icons/27047/archlinux.svg">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    .time {
+      margin-top: 7vh;
+      font-size: 7vw;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #fff;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 20px #000a;
+    }
+    .links {
+      margin-top: 10vh;
+      display: flex;
+      gap: 3vw;
+      justify-content: center;
+    }
+    .link-tile {
+      background: #181818;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #000a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2vw 2vw 1vw 2vw;
+      transition: transform 0.12s, box-shadow 0.12s;
+      text-decoration: none;
+      min-width: 120px;
+      max-width: 160px;
+    }
+    .link-tile:hover {
+      transform: translateY(-6px) scale(1.045);
+      box-shadow: 0 8px 32px #000c;
+      background: #222;
+    }
+    .link-tile img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1vw;
+      /* Remove color filter for original colors */
+      filter: none;
+      transition: filter 0.15s;
+    }
+    .link-label {
+      color: #fff;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      margin-top: 0.2em;
+      font-weight: 500;
+      text-align: center;
+      opacity: 0.9;
+    }
+    @media (max-width: 600px) {
+      .time { font-size: 11vw; margin-top: 5vh;}
+      .links { gap: 6vw; margin-top: 8vh;}
+      .link-tile { min-width: 90px; max-width: 120px; padding: 3vw 1vw 2vw 1vw;}
+      .link-tile img { width: 38px; height: 38px;}
+      .link-label { font-size: 1rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="time" id="clock">--:--:--</div>
+  <div class="links">
+    <a class="link-tile" href="https://www.youtube.com/" title="YouTube">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
+      <span class="link-label">YouTube</span>
+    </a>
+    <a class="link-tile" href="https://github.com/" title="GitHub">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+      <span class="link-label">GitHub</span>
+    </a>
+    <a class="link-tile" href="https://web.whatsapp.com/" title="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      <span class="link-label">WhatsApp</span>
+    </a>
+  </div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const pad = n => n.toString().padStart(2, '0');
+      const t = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+      document.getElementById('clock').textContent = t;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>
