@@ -2,114 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Home Page</title>
-  <!-- Arch Linux favicon (original color, SVG, CC0 license) -->
   <link rel="icon" type="image/png" href="archlinux.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Gruvbox Dark Palette (medium contrast) */
+    :root {
+      --gb-bg0: #282828;
+      --gb-bg1: #3c3836;
+      --gb-bg2: #504945;
+      --gb-fg1: #ebdbb2;
+      --gb-orange: #fe8019;
+      --gb-yellow: #fabd2f;
+      --gb-green: #b8bb26;
+      --gb-blue: #83a598;
+    }
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
-      background: #111;
-      color: #fff;
-      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-      min-height: 100vh;
-      box-sizing: border-box;
+      background: var(--gb-bg0);
+      color: var(--gb-fg1);
+      font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+      width: 100vw;
+      height: 100vh;
     }
     body {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-    }
-    .time {
-      margin-top: 7vh;
-      font-size: 7vw;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: #fff;
-      text-align: center;
-      user-select: none;
-      text-shadow: 0 0 20px #000a;
-    }
-    .links {
-      margin-top: 10vh;
-      display: flex;
-      gap: 3vw;
       justify-content: center;
+      min-height: 100vh;
+      min-width: 100vw;
     }
-    .link-tile {
-      background: #181818;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px #000a;
+    .clock-container {
+      background: var(--gb-bg1);
+      border-radius: 1rem;
+      box-shadow: 0 4px 24px #1d2021aa;
+      padding: 3rem 4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2vw 2vw 1vw 2vw;
-      transition: transform 0.12s, box-shadow 0.12s;
-      text-decoration: none;
-      min-width: 120px;
-      max-width: 160px;
     }
-    .link-tile:hover {
-      transform: translateY(-6px) scale(1.045);
-      box-shadow: 0 8px 32px #000c;
-      background: #222;
+    time {
+      font-size: 4rem;
+      letter-spacing: 0.1em;
+      color: var(--gb-yellow);
+      background: var(--gb-bg2);
+      border-radius: 0.5rem;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      transition: color 0.2s;
+      margin-bottom: 0.5rem;
     }
-    .link-tile img {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 1vw;
-      /* Remove color filter for original colors */
-      filter: none;
-      transition: filter 0.15s;
-    }
-    .link-label {
-      color: #fff;
-      font-size: 1.15rem;
-      letter-spacing: 0.02em;
-      margin-top: 0.2em;
-      font-weight: 500;
-      text-align: center;
-      opacity: 0.9;
-    }
-    @media (max-width: 600px) {
-      .time { font-size: 11vw; margin-top: 5vh;}
-      .links { gap: 6vw; margin-top: 8vh;}
-      .link-tile { min-width: 90px; max-width: 120px; padding: 3vw 1vw 2vw 1vw;}
-      .link-tile img { width: 38px; height: 38px;}
-      .link-label { font-size: 1rem;}
+    .date {
+      color: var(--gb-blue);
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+      letter-spacing: 0.05em;
     }
   </style>
 </head>
 <body>
-  <div class="time" id="clock">--:--:--</div>
-  <div class="links">
-    <a class="link-tile" href="https://www.youtube.com/" title="YouTube">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
-      <span class="link-label">YouTube</span>
-    </a>
-    <a class="link-tile" href="https://github.com/" title="GitHub">
-      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
-      <span class="link-label">GitHub</span>
-    </a>
-    <a class="link-tile" href="https://web.whatsapp.com/" title="WhatsApp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-      <span class="link-label">WhatsApp</span>
-    </a>
+  <div class="clock-container">
+    <time id="clock" datetime=""></time>
+    <div class="date" id="date"></div>
   </div>
-
   <script>
-    function updateTime() {
-      const now = new Date();
-      const pad = n => n.toString().padStart(2, '0');
-      const t = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
-      document.getElementById('clock').textContent = t;
+    function pad(num) {
+      return String(num).padStart(2, '0');
     }
-    setInterval(updateTime, 1000);
-    updateTime();
+    function updateClock() {
+      const now = new Date();
+      const hours = pad(now.getHours());
+      const minutes = pad(now.getMinutes());
+      const seconds = pad(now.getSeconds());
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      const dateString = now.toLocaleDateString(undefined, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      const datetimeValue = now.toISOString().slice(0,19);
+      const clock = document.getElementById('clock');
+      clock.textContent = timeString;
+      clock.setAttribute('datetime', datetimeValue);
+      document.getElementById('date').textContent = dateString;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
   </script>
 </body>
 </html>
