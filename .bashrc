@@ -1,5 +1,8 @@
 PS1="\n \[\e[38;5;166m\]\u:\[\e[38;5;40m\]\w\[\e[38;5;51m\] > \[\e[0m\]"
 
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 set -o vi
 
 HISTCONTROL=ignoreboth

@@ -7,7 +7,7 @@ set $right l
 
 set $term exec foot
 set $menu exec fuzzel
-set $browser exec vivaldi
+set $browser exec chromium
 set $fileBrowser exec pcmanfm
 
 set $paste exec cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy
