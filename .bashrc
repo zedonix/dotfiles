@@ -28,7 +28,6 @@ alias l="eza -l --icons=always"
 alias ll="eza -la --icons=always"
 alias ls='ls --color=auto'
 alias ip='ip -color=auto'
-alias disk='ncdu'
 alias vi="nvim ~/vimwiki/index.md"
 alias ff="fastfetch"
 alias vim="nvim"
@@ -39,5 +38,13 @@ alias play="asciinema play"
 alias yt="yt-dlp"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias grub-mkconfig="grub-mkconfig -o /boot/grub/grub.cfg"
+
+burn() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: burn <input_file> <output_device>"
+        return 1
+    fi
+    sudo dd if="$1" of="$2" bs=4M status=progress oflag=sync
+}
 
 eval "$(fzf --bash)"
