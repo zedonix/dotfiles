@@ -216,26 +216,69 @@ user_pref("browser.uidensity", 1);
 user_pref("browser.tabs.inTitlebar", 0);
 user_pref("media.videocontrols.picture-in-picture.enabled", false);
 
-// PREF: allow websites to ask you for your location
-// PREF: allow websites to ask you to receive site notifications
+// allow websites to ask you for your location
+// allow websites to ask you to receive site notifications
 user_pref("permissions.default.geo", 0);
 user_pref("permissions.default.desktop-notification", 0);
 
-// PREF: disable Firefox Sync
-// PREF: disable the Firefox View tour from popping up
+// disable Firefox Sync
+// disable the Firefox View tour from popping up
 user_pref("identity.fxaccounts.enabled", false);
 user_pref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
 
-// PREF: enforce DNS-over-HTTPS (DoH)
+// enforce DNS-over-HTTPS (DoH)
 user_pref("network.trr.mode", 2);
 user_pref("network.trr.max-fails", 5);
 
-// PREF: enforce certificate pinning
+// enforce certificate pinning
 // [ERROR] MOZILLA_PKIX_ERROR_KEY_PINNING_FAILURE
 // 1 = allow user MiTM (such as your antivirus) (default)
 // 2 = strict
 user_pref("security.cert_pinning.enforcement_level", 2);
 
+// disable login manager
+user_pref("signon.rememberSignons", false);
+
+// disable address and credit card manager
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.enabled", false);
+
+// hide site shortcut thumbnails on New Tab page
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+
+// hide weather on New Tab page
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
+
+// hide dropdown suggestions when clicking on the address bar
+user_pref("browser.urlbar.suggest.topsites", false);
+
+// allow websites to ask you for your location
+user_pref("permissions.default.geo", 0);
+
+// allow websites to ask you to receive site notifications
+user_pref("permissions.default.desktop-notification", 0);
+
+// Prevent accidental closing
+user_pref("browser.quitShortcut.disabled", true);
+
+// Backspace go back one page in the tab's history and Shift+Backspace go forward
+user_pref("browser.backspace_action", 0);
+
+// don't try to find proxies
+network.notify.checkForProxies = false
+
+// Disable fullscreen transition animation
+user_pref("full-screen-api.transition-duration.enter", "0 0");
+user_pref("full-screen-api.transition-duration.leave", "0 0");
+
+// Disable tab open/close/move animations
+user_pref("browser.tabs.animate", false);
+
+// Disable most cosmetic UI animations
+user_pref("toolkit.cosmeticAnimations.enabled", false);
+
+// Request reduced motion for web content (blocks some site and UI animations)
+user_pref("ui.prefersReducedMotion", 1);
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/

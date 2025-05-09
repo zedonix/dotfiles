@@ -38,6 +38,7 @@ alias play="asciinema play"
 alias yt="yt-dlp"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias grub-mkconfig="grub-mkconfig -o /boot/grub/grub.cfg"
+alias grub-install="grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB"
 
 burn() {
     if [ $# -ne 2 ]; then
