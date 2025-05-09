@@ -1,6 +1,7 @@
 unbind-key j k h H L c ,
 
 auto-reload yes
+browser "firefox %u"
 
 bind-key ; macro-prefix 
 bind-key h quit 
