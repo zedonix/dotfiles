@@ -1,9 +1,17 @@
-PS1="\n \[\e[38;5;166m\]\u:\[\e[38;5;40m\]\w\[\e[38;5;51m\] > \[\e[0m\]"
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
+parse_git_branch() {
+             git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+PS1='\n\033[1;36m[ \u |\033[m \033[1;32m\W\033[m \033[1;36m]\033[m $(parse_git_branch)\n\[\e[38;5;51m\]>\[\e[0m\] '
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
 set -o vi
+
+shopt -s checkwinsize
+shopt -s histappend
 
 HISTCONTROL=ignoreboth
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
@@ -22,21 +30,31 @@ export VISUAL=nvim
 
 export GOPATH="$XDG_DATA_HOME"/go
 
-shopt -s checkwinsize
+alias l="eza -l --icons=always --group-directories-first"
+alias ll="eza -la --icons=always --group-directories-first"
+alias l.="eza -al --icons=always | grep '\.'"
 
-alias l="eza -l --icons=always"
-alias ll="eza -la --icons=always"
+alias x="exit"
+alias c="clear"
+
 alias ls='ls --color=auto'
 alias ip='ip -color=auto'
+alias grep='grep --color=auto'
+alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+
+alias cp="cp -i"
+
 alias vi="nvim ~/vimwiki/index.md"
-alias ff="fastfetch"
 alias vim="nvim"
+
+alias ff="fastfetch"
 alias nb="newsboat"
 alias img="swayimg"
 alias record="asciinema rec"
 alias play="asciinema play"
-alias yt="yt-dlp"
-alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+alias ipaddr="curl ipinfo.io"
+
+alias jctl="journalctl -p 3 -xb"
 alias grub-mkconfig="grub-mkconfig -o /boot/grub/grub.cfg"
 alias grub-install="grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB"
 
