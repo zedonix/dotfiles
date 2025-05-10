@@ -54,9 +54,8 @@ alias record="asciinema rec"
 alias play="asciinema play"
 alias ipaddr="curl ipinfo.io"
 
-alias jctl="journalctl -p 3 -xb"
-alias grub-mkconfig="grub-mkconfig -o /boot/grub/grub.cfg"
-alias grub-install="grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB"
+alias jrctl="journalctl -p 3 -xb"
+alias grub-mkconfig="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 burn() {
     if [ $# -ne 2 ]; then
