@@ -276,6 +276,10 @@ user_pref("toolkit.cosmeticAnimations.enabled", false);
 
 // Request reduced motion for web content (blocks some site and UI animations)
 user_pref("ui.prefersReducedMotion", 1);
+
+// Enable smooth scrolling
+user_pref("general.smoothScroll", true);
+
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
