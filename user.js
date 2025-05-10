@@ -261,9 +261,6 @@ user_pref("permissions.default.desktop-notification", 0);
 // Prevent accidental closing
 user_pref("browser.quitShortcut.disabled", true);
 
-// Backspace go back one page in the tab's history and Shift+Backspace go forward
-user_pref("browser.backspace_action", 0);
-
 // don't try to find proxies
 network.notify.checkForProxies = false
 

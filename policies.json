@@ -1,0 +1,33 @@
+{
+  "policies": {
+    "PDFjs": {
+      "Enabled": false
+    },
+    "ExtensionSettings": {
+      "*": {
+        "installation_mode": "blocked",
+        "install_sources": ["https://addons.mozilla.org/"]
+      },
+      "firefox@ghostery.com": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ghostery/latest.xpi"
+      },
+      "jid1-KKzOGWgsW3Ao4Q@jetpack": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/i-dont-care-about-cookies/latest.xpi"
+      },
+      "{762f9885-5a13-4abd-9c77-433dcd38b8fd}": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi"
+      },
+      "savewebpas@jeffersonscher.com": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/save-webp-as-png-or-jpeg/latest.xpi"
+      },
+      "{74145f27-f039-47ce-a470-a662b129930a}": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi"
+      }
+    }
+  }
+}

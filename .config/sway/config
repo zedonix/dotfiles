@@ -147,7 +147,7 @@ bar {
     status_command ~/.config/sway/bar.sh
     colors {
         statusline #00FF00
-        background #1d202100
+        background #1d2021ff
         inactive_workspace #282c34 #282c34  #5c5c5c
         focused_workspace #458588 #458588 #ebdbb2
         active_workspace #83a598 #83a598 #282828
