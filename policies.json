@@ -3,7 +3,6 @@
     "PDFjs": {
       "Enabled": false
     },
-
     "ExtensionSettings": {
       "*": {
         "installation_mode": "allowed",
@@ -25,7 +24,6 @@
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/save-webp-as-png-or-jpeg/latest.xpi"
       }
-
     }
   }
 }
