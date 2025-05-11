@@ -49,7 +49,7 @@ alias vim="nvim"
 
 alias ff="fastfetch"
 alias nb="newsboat"
-alias img="swayimg"
+alias img="loupe"
 alias record="asciinema rec"
 alias play="asciinema play"
 alias ipaddr="curl ipinfo.io"
