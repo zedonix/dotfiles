@@ -1,3 +1,4 @@
+exec_always --no-startup-id ~/.scripts/once.sh
 set $mod Mod4
 
 set $left h
