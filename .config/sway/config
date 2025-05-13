@@ -48,6 +48,7 @@ bindsym $mod+Shift+Return $browser
 bindsym $mod+e $fileBrowser
 
 bindsym $mod+n exec swaync-client -t -sw
+bindsym Delete exec swaync-client --hide-latest
 
 bindsym $mod+p $paste
 bindsym control+Shift+escape $htop
