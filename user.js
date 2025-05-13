@@ -281,11 +281,19 @@ user_pref("ui.prefersReducedMotion", 1);
 user_pref("general.smoothScroll", true);
 
 // Set home page
-user_pref("browser.startup.homepage", "/home/piyush/Documents/home/home.html");
+// user_pref("browser.startup.homepage", "/home/piyush/Documents/home/home.html");
 // http://localhost:8888/home.html
 // python3 -m http.server 8888
 //"newtaboverride@agenedia.com":{"installation_mode":"force_installed","install_url":"https://addons.mozilla.org/firefox/downloads/latest/new-tab-override/latest.xpi"}
 
+// Profiles disable
+user_pref("browser.profiles.enabled", false);
+
+// Dark mode
+user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
+
+// Force dark mode on all websites
+user_pref("layout.css.prefers-color-scheme.content-override", 0);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
