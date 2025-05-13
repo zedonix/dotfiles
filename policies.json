@@ -8,10 +8,6 @@
         "installation_mode": "allowed",
         "install_sources": ["https://addons.mozilla.org/"]
       },
-      "firefox@ghostery.com": {
-        "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ghostery/latest.xpi"
-      },
       "jid1-KKzOGWgsW3Ao4Q@jetpack": {
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/i-dont-care-about-cookies/latest.xpi"
@@ -23,6 +19,10 @@
       "savewebpas@jeffersonscher.com": {
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/save-webp-as-png-or-jpeg/latest.xpi"
+      },
+      "uBlock0@raymondhill.net": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
       }
     }
   }
