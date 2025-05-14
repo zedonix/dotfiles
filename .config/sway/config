@@ -17,6 +17,8 @@ set $screenshot exec flameshot
 set $htop $term -a 'htop' htop
 
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
+assign [app_id="firefox"] workspace 2
+assign [class="discord"] workspace 3
 
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
@@ -24,7 +26,6 @@ exec wl-clip-persist --clipboard both --reconnect-tries 0
 
 exec_always autotiling
 
-# exec flameshot
 exec swaync
 exec ~/.config/sway/network.sh
 exec udiskie --notify
@@ -36,6 +37,9 @@ exec swayidle -w \
     timeout 300 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -c 000000'
+
+exec firefox
+exec discord
 
 floating_modifier $mod normal
 bindsym $mod+Shift+q kill
