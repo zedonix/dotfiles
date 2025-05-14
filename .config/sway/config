@@ -11,9 +11,9 @@ set $browser exec firefox
 set $fileBrowser exec pcmanfm
 set $calc exec qalculate-gtk
 
-set $paste exec cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy
-set $screenshot exec grim -g "$(slurp)"
-set $htop $term -a 'htop' htop
+set $paste 'cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy'
+set $screenshot grim -g "$(slurp)"
+set $htop '$term -a htop htop'
 
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="qalculate-gtk"] floating enable
@@ -39,25 +39,25 @@ exec swayidle -w \
     resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -c 000000'
 
-floating_modifier $mod normal
-bindsym $mod+Shift+q kill
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes' 'swaymsg exit' 'sleep 1 && swaymsg exit'
+bindsym $mod+Return exec $term
+bindsym $mod+space exec $menu
+bindsym $mod+Shift+Return exec $browser
+bindsym $mod+e exec $fileBrowser
+bindsym $mod+c exec $calc
 
-bindsym $mod+Return $term
-bindsym $mod+space $menu
-bindsym $mod+Shift+Return $browser
-bindsym $mod+e $fileBrowser
-bindsym $mod+c $calc
+bindsym $mod+p exec $paste
+bindsym Ctrl+Shift+Escape exec $htop
 
 bindsym $mod+n exec swaync-client -t -sw
 bindsym Ctrl+Delete exec swaync-client --hide-latest
 
-bindsym $mod+p $paste
-bindsym Ctrl+Shift+Escape $htop
+bindsym Print exec $screenshot - | tee "$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png" | wl-copy
+bindsym Ctrl+Print exec $screenshot "/tmp/screenshot.png" && gimp "/tmp/screenshot.png"
 
-bindsym Print $screenshot "$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png" && grim -g "$region" - | wl-copy
-bindsym Ctrl+Print $screenshot "/tmp/$(date +'%Y-%m-%d-%H%M%S').png" && gimp "/tmp/$(date +'%Y-%m-%d-%H%M%S').png"
+floating_modifier $mod normal
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes' 'swaymsg exit' 'sleep 1 && swaymsg exit'
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
