@@ -9,16 +9,17 @@ set $term exec foot
 set $menu exec fuzzel
 set $browser exec firefox
 set $fileBrowser exec pcmanfm
+set $calc exec qalculate-gtk
 
 set $paste exec cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy
-
-# set $screenshot exec shotman --capture
-set $screenshot exec flameshot
+set $screenshot exec grim -g "$(slurp)"
 set $htop $term -a 'htop' htop
 
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
+for_window [app_id="qalculate-gtk"] floating enable
 assign [app_id="firefox"] workspace 2
 assign [class="discord"] workspace 3
+assign [class="gimp-3.0"] workspace 4
 
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
@@ -38,9 +39,6 @@ exec swayidle -w \
     resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -c 000000'
 
-exec firefox
-exec discord
-
 floating_modifier $mod normal
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
@@ -50,18 +48,16 @@ bindsym $mod+Return $term
 bindsym $mod+space $menu
 bindsym $mod+Shift+Return $browser
 bindsym $mod+e $fileBrowser
+bindsym $mod+c $calc
 
 bindsym $mod+n exec swaync-client -t -sw
-bindsym Delete exec swaync-client --hide-latest
+bindsym Ctrl+Delete exec swaync-client --hide-latest
 
 bindsym $mod+p $paste
-bindsym control+Shift+escape $htop
+bindsym Ctrl+Shift+Escape $htop
 
-bindsym Print $screenshot gui -p ~/Pictures/Screenshots
-bindsym Ctrl+Print $screenshot full -c -p ~/Pictures/Screenshots
-# bindsym Print $screenshot region
-# bindsym Shift+Print $screenshot output
-# bindsym Ctrl+Print $screenshot window
+bindsym Print $screenshot "$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png" && grim -g "$region" - | wl-copy
+bindsym Ctrl+Print $screenshot "/tmp/$(date +'%Y-%m-%d-%H%M%S').png" && gimp "/tmp/$(date +'%Y-%m-%d-%H%M%S').png"
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
