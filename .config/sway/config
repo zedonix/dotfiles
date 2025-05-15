@@ -14,8 +14,10 @@ set $calc exec qalculate-gtk
 set $paste 'cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy'
 set $screenshot grim -g "$(slurp)"
 set $htop '$term -a htop htop'
+set $nvtop '$term -a nvtop nvtop'
 
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
+for_window [app_id="nvtop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="qalculate-gtk"] floating enable
 assign [app_id="firefox"] workspace 2
 assign [class="discord"] workspace 3
@@ -46,7 +48,8 @@ bindsym $mod+e exec $fileBrowser
 bindsym $mod+c exec $calc
 
 bindsym $mod+p exec $paste
-bindsym Ctrl+Shift+Escape exec $htop
+bindsym Ctrl+Escape exec $htop
+bindsym Ctrl+Shift+Escape exec $nvtop
 
 bindsym $mod+n exec swaync-client -t -sw
 bindsym Ctrl+Delete exec swaync-client --hide-latest
