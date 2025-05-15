@@ -14,12 +14,15 @@ shopt -s checkwinsize
 shopt -s histappend
 
 HISTCONTROL=ignoreboth
-export HISTFILE="${XDG_STATE_HOME}"/bash/history
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GOPATH="$XDG_DATA_HOME"/go
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
 
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
@@ -28,7 +31,7 @@ export QT_QPA_PLATFORM=wayland
 export EDITOR=nvim
 export VISUAL=nvim
 
-export GOPATH="$XDG_DATA_HOME"/go
+export ENCHANT_ORDER=nuspell,hunspell
 
 alias l="eza -l --icons=always --group-directories-first"
 alias ll="eza -la --icons=always --group-directories-first"

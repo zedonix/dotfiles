@@ -295,6 +295,14 @@ user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
 // Force dark mode on all websites
 user_pref("layout.css.prefers-color-scheme.content-override", 0);
 
+// Autoscroll setup
+user_pref("general.autoScroll", true);
+user_pref("middlemouse.paste", false);
+user_pref("middlemouse.contentLoadURL", true);
+
+// Spell Checker
+user_pref("spellchecker.dictionary", "en_US");
+
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
