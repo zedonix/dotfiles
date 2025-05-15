@@ -31,7 +31,6 @@ exec_always autotiling
 
 exec swaync
 exec nm-applet
-exec ~/.config/sway/network.sh
 exec udiskie --notify
 exec sway-audio-idle-inhibit
 exec swayosd-server
