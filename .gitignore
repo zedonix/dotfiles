@@ -1,2 +1,3 @@
 .config/nvim/lazy-lock.json
 .config/tmux/plugins
+.config/psd/.psd.conf
