@@ -30,6 +30,7 @@ exec wl-clip-persist --clipboard both --reconnect-tries 0
 exec_always autotiling
 
 exec swaync
+exec nm-applet
 exec ~/.config/sway/network.sh
 exec udiskie --notify
 exec sway-audio-idle-inhibit
