@@ -86,4 +86,11 @@ ex() {
          echo "'$1' is not a valid file"
      fi
 }
+
+rcomp() {
+  local infile="$1"
+  local outfile="$2"
+  Rscript -e "rmarkdown::render('$infile', output_format='pdf_document', output_file='$outfile')"
+}
+
 eval "$(fzf --bash)"
