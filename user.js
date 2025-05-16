@@ -303,6 +303,11 @@ user_pref("middlemouse.contentLoadURL", true);
 // Spell Checker
 user_pref("spellchecker.dictionary", "en_US");
 
+// Use DNS-over-HTTPS (DoH)
+user_pref("network.trr.mode", 3);
+user_pref("network.trr.uri", "https://dns.google/dns-query");
+user_pref("network.trr.bootstrapAddress", "8.8.8.8");
+
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
