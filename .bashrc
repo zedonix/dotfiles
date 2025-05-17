@@ -30,6 +30,7 @@ export QT_QPA_PLATFORM=wayland
 
 export EDITOR=nvim
 export VISUAL=nvim
+export SYSTEMD_EDITOR=nvim
 
 export ENCHANT_ORDER=nuspell,hunspell
 
