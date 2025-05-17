@@ -15,6 +15,7 @@ set $paste 'cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-co
 set $screenshot grim -g "$(slurp)"
 set $htop '$term -a htop htop'
 set $nvtop '$term -a nvtop nvtop'
+set $color hyprpicker | wl-copy
 
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="nvtop"] floating enable, resize set 1366 ppt 768 ppt
@@ -56,6 +57,7 @@ bindsym Ctrl+Delete exec swaync-client --hide-latest
 
 bindsym Print exec $screenshot - | tee "$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png" | wl-copy
 bindsym Ctrl+Print exec $screenshot "/tmp/screenshot.png" && gimp "/tmp/screenshot.png"
+bindsym Ctrl+Shift+p exec $color
 
 floating_modifier $mod normal
 bindsym $mod+Shift+q kill
