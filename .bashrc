@@ -36,7 +36,6 @@ export ENCHANT_ORDER=nuspell,hunspell
 
 alias l="eza -l --icons=always --group-directories-first"
 alias ll="eza -la --icons=always --group-directories-first"
-alias l.="eza -al --icons=always | grep '\.'"
 
 alias x="exit"
 alias c="clear"
@@ -55,9 +54,6 @@ alias vim="nvim"
 alias ff="fastfetch"
 alias nb="newsboat"
 alias img="swayimg"
-alias record="asciinema rec"
-alias play="asciinema play"
-alias ipaddr="curl ipinfo.io"
 
 alias jrctl="journalctl -p 3 -xb"
 alias grub-mkconfig="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -89,12 +85,6 @@ ex() {
      else
          echo "'$1' is not a valid file"
      fi
-}
-
-rcomp() {
-  local infile="$1"
-  local outfile="$2"
-  Rscript -e "rmarkdown::render('$infile', output_format='pdf_document', output_file='$outfile')"
 }
 
 eval "$(fzf --bash)"
