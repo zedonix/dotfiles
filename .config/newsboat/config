@@ -3,6 +3,7 @@ unbind-key j k h H L c ,
 auto-reload yes
 prepopulate-query-feeds yes
 browser "firefox %u"
+macro w set browser "mpv %u" ; open-in-browser ; set browser "firefox %u"
 
 # Bindings
 bind-key SPACE macro-prefix
@@ -19,6 +20,19 @@ bind-key d pagedown
 bind-key u pageup
 bind-key a toggle-article-read
 bind-key c toggle-show-read-feeds
+
+# Rice
+#highlight feedlist "[╒╘╞]═.*═[╛╕╡]" yellow default bold
+highlight feedlist "[║│]" yellow default bold
+highlight feedlist "╠═.*" yellow default bold
+
+highlight feedlist "\\(News\\) .*" red
+highlight feedlist "\\(Entertain\\) .*" blue
+highlight feedlist "\\(Linux\\) .*" green
+highlight feedlist "\\(Blog\\) .*" magenta
+highlight feedlist "\\(Reddit\\) .*" yellow
+
+feedlist-format "%?T?║%4i %n %8u (%T) %t &╠═════════════════════════════════════════════════════%t?"
 
 # Colors
 color background default default

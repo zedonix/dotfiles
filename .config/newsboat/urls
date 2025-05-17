@@ -1,18 +1,34 @@
-"query:Unread:unread = \"yes\"" meta
+# "query:Reddit:tags # \"content\" or title =~ \"\\[OC\\]\"" meta
+# "query:News:tags # \"news\"" meta
+# "query:Entertainment:tags # \"entertain\"" meta
+# "query:Linux:tags # \"linux\"" meta
+# "query:Unread:unread = \"yes\"" meta
 
-https://archlinux.org/feeds/news/
+Blog
+https://archlinux.org/feeds/news/ archlinux
 https://linuxhandbook.com/rss blog
 https://opensourcemusings.com/feed.xml blog
 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCZXW8E1__d5tZb-wLFOt8TQ
-https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA
-https://www.youtube.com/feeds/videos.xml?channel_id=UCylGUf9BvQooEFjgdNudoQg
-https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw
-https://www.youtube.com/feeds/videos.xml?channel_id=UCGKEMK3s-ZPbjVOIuAV8clQ
-https://www.youtube.com/feeds/videos.xml?channel_id=UC0W_BIuwk8D0Bv4THbVZZOQ
-https://www.youtube.com/feeds/videos.xml?channel_id=UC6biysICWOJ-C3P4Tyeggzg
-https://www.youtube.com/feeds/videos.xml?channel_id=UCs6KfncB4OV6Vug4o_bzijg
-https://www.youtube.com/feeds/videos.xml?channel_id=UCwHwDuNd9lCdA7chyyquDXw
-https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA
-https://www.youtube.com/feeds/videos.xml?channel_id=UCg6gPGh8HU2U01vaFCAsvmQ
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg
+News
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw news     # The Linux Experiment
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0W_BIuwk8D0Bv4THbVZZOQ news     # Surveillance Report
+https://www.youtube.com/feeds/videos.xml?channel_id=UCs6KfncB4OV6Vug4o_bzijg news     # Techlore
+
+Entertain
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZXW8E1__d5tZb-wLFOt8TQ entertain # Bog
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZzfw1NZ40-RLtRPVSNUHOw entertain # A-dn
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtMVHI3AJD4Qk4hcbZnI9ZQ entertain # SomeOrdinaryGamers
+
+Linux
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA linux    # Brodie Robertson
+https://www.youtube.com/feeds/videos.xml?channel_id=UCylGUf9BvQooEFjgdNudoQg linux    # The Linux Cast
+https://www.youtube.com/feeds/videos.xml?channel_id=UCwHwDuNd9lCdA7chyyquDXw linux    # Penguins Bread
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA linux    # Mental Outlaw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCg6gPGh8HU2U01vaFCAsvmQ linux    # Chris Titus Tech
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg linux    # DistroTube
+
+Reddit
+https://www.reddit.com/r/archlinux/new.rss reddit content
+https://www.reddit.com/r/linux/new.rss reddit content
+https://www.reddit.com/r/commandline/new.rss reddit content
+https://www.reddit.com/r/unixporn/new.rss reddit
