@@ -21,8 +21,9 @@ for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="nvtop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="qalculate-gtk"] floating enable
 assign [app_id="firefox"] workspace 2
-assign [class="discord"] workspace 3
+assign [app_id="zed"] workspace 3
 assign [class="gimp-3.0"] workspace 4
+assign [class="discord"] workspace 5
 
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
