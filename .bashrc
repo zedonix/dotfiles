@@ -32,8 +32,6 @@ export EDITOR=nvim
 export VISUAL=nvim
 export SYSTEMD_EDITOR=nvim
 
-export ENCHANT_ORDER=nuspell,hunspell
-
 alias l="eza -l --icons=always --group-directories-first"
 alias ll="eza -la --icons=always --group-directories-first"
 
