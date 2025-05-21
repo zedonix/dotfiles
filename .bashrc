@@ -31,6 +31,7 @@ export QT_QPA_PLATFORM=wayland
 export EDITOR=nvim
 export VISUAL=nvim
 export SYSTEMD_EDITOR=nvim
+export MANPAGER="nvim +Man!"
 
 alias l="eza -l --icons=always --group-directories-first"
 alias ll="eza -la --icons=always --group-directories-first"
