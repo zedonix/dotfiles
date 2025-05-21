@@ -82,11 +82,23 @@ end
 -- Keybindings
 Map('n', '<Leader>b', '<cmd>ls<CR>')
 Map('n', '<Esc>', '<cmd>nohlsearch<CR>')
-Map('n', '<Leader>f', '<cmd>:FormatFile<CR>')
-Map('n', '<Leader>s', '<cmd>:FormatFile<CR>')
+Map('n', '<Leader>f', '<cmd>:Format<CR>')
+Map('n', '<Leader>s', '<cmd>:Format<CR>')
 Map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 Map('n', 'j', 'gj')
 Map('n', 'k', 'gk')
+
+-- Vimwiki Configuration
+Map('n', '<leader>ww', ':VimwikiIndex<CR>')
+Map('n', '<leader>wd', ':VimwikiMakeDiaryNote<CR>')
+
+-- LSP Key Mappings
+Map('n', 'gd', '<cmd>vim.lsp.buf.definition<CR>')
+Map('n', 'gi', '<cmd>vim.lsp.buf.implementation<CR>')
+Map('n', '<Leader>ca', '<cmd>vim.lsp.buf.code_action<CR>')
+Map('n', '<Leader>r', '<cmd>vim.lsp.buf.rename<CR>')
+Map('n', '<Leader>df', '<cmd>vim.diagnostic.goto_next<CR>')
+Map('n', '<Leader>dp', '<cmd>vim.diagnostic.goto_prev<CR>')
 
 -- Format Command
 vim.api.nvim_create_user_command('FormatFile', function()
@@ -95,67 +107,80 @@ vim.api.nvim_create_user_command('FormatFile', function()
 end, { desc = 'Format the current file' })
 
 -- Plugin Setup
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-    vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+-- Mini.Deps
+local path_package = vim.fn.stdpath 'data' .. '/site/'
+local mini_path = path_package .. 'pack/deps/start/mini.nvim'
+if not vim.loop.fs_stat(mini_path) then
+    vim.cmd 'echo "Installing `mini.nvim`" | redraw'
+    local clone_cmd = {
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/echasnovski/mini.nvim',
+        mini_path,
+    }
+    vim.fn.system(clone_cmd)
+    vim.cmd 'packadd mini.nvim | helptags ALL'
+    vim.cmd 'echo "Installed `mini.nvim`" | redraw'
 end
-vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup {
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        config = function()
-            require('nvim-treesitter.configs').setup {
-                ensure_installed = { 'lua', 'python', 'bash' },
-                highlight = { enable = true, additional_vim_regex_highlighting = false },
-                indent = { enable = true },
-            }
+require('mini.deps').setup { path = { package = path_package } }
+local add = MiniDeps.add
+
+-- Plugin install
+add { source = 'sainnhe/gruvbox-material' }
+
+add {
+    source = 'nvim-treesitter/nvim-treesitter',
+    checkout = 'master',
+    monitor = 'main',
+    hooks = {
+        post_checkout = function()
+            vim.cmd 'TSUpdate'
         end,
-    },
-    {
-        'neovim/nvim-lspconfig',
-        config = function()
-            vim.lsp.enable 'pyright'
-            vim.lsp.enable 'bashls'
-            vim.api.nvim_create_autocmd('LspAttach', {
-                group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-                callback = function(ev)
-                    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-                    local opts = { buffer = ev.buf }
-                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-                    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-                    vim.keymap.set('n', '<space>f', function()
-                        vim.lsp.buf.format { async = true }
-                    end, opts)
-                end,
-            })
-        end,
-    },
-    {
-        'sainnhe/gruvbox-material',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.g.gruvbox_material_enable_italic = true
-            vim.cmd.colorscheme 'gruvbox-material'
-        end,
-    },
-    {
-        'vimwiki/vimwiki',
-        event = 'BufEnter *.md',
-        init = function()
-            vim.g.vimwiki_list = {
-                {
-                    path = '~/vimwiki/',
-                    syntax = 'markdown',
-                    ext = 'md',
-                },
-            }
-            vim.g.vimwiki_global_ext = 0
-        end,
-        keys = { '<leader>ww', '<leader>wt' },
     },
 }
+add {
+    source = 'vimwiki/vimwiki',
+    config = function()
+        vim.g.vimwiki_list = {
+            {
+                path = '~/vimwiki/',
+                syntax = 'markdown',
+                ext = '.md',
+            },
+        }
+        vim.g.vimwiki_global_ext = 0
+    end,
+}
+add {
+    source = 'neovim/nvim-lspconfig',
+}
+
+-- Initialize Plugins
+local now, later = MiniDeps.now, MiniDeps.later
+
+now(function()
+    vim.g.gruvbox_material_enable_italic = true
+    vim.cmd 'colorscheme gruvbox-material'
+end)
+now(function()
+    require('mini.statusline').setup()
+end)
+now(function()
+    require('mini.icons').setup()
+end)
+
+later(function()
+    require('nvim-treesitter.configs').setup {
+        ensure_installed = { 'lua', 'vimdoc', 'python', 'bash', 'c' },
+        highlight = { enable = true },
+    }
+end)
+
+-- LSP
+later(function()
+    vim.lsp.enable 'pyright'
+    vim.lsp.enable 'bashls'
+end)
+
