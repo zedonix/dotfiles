@@ -23,10 +23,6 @@
       "languagetool-webextension@languagetool.org": {
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/languagetool/latest.xpi"
-      },
-      "skipredirect@sblask": {
-        "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi"
       }
     }
   }

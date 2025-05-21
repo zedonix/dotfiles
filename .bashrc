@@ -78,12 +78,16 @@ ex() {
              *.tgz)       tar xzf $1     ;;
              *.zip)       unzip $1       ;;
              *.Z)         uncompress $1  ;;
-             *.7z)        7z x $1    ;;
+             *.7z)        7z x $1        ;;
              *)           echo "'$1' cannot be extracted via extract()" ;;
          esac
      else
          echo "'$1' is not a valid file"
      fi
+}
+
+batdiff() {
+    git diff --name-only --relative --diff-filter=d | xargs bat --diff
 }
 
 eval "$(fzf --bash)"
