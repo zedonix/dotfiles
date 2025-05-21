@@ -73,6 +73,8 @@ function Format()
         Formatter = 'stylua'
     elseif extension == 'python' then
         Formatter = 'black'
+    elseif extension == 'sh' then
+        Formatter = 'shfmt -w -i 4'
     else
         Formatter = 'echo'
     end
