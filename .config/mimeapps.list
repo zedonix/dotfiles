@@ -1,0 +1,15 @@
+
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop
+application/x-pdf=org.pwmt.zathura.desktop
+application/fdf=org.pwmt.zathura.desktop
+application/xdp=org.pwmt.zathura.desktop
+application/xfdf=org.pwmt.zathura.desktop
+application/pdx=org.pwmt.zathura.desktop
+image/jpeg=swayimg.desktop
+image/svg=swayimg.desktop
+image/png=swayimg.desktop
+image/gif=swayimg.desktop
+image/webp=swayimg.desktop
+image/bmp=swayimg.desktop
+image/tiff=swayimg.desktop
