@@ -87,7 +87,8 @@ ex() {
 }
 
 # batdiff() {
-# 	git diff --name-only --relative --diff-filter=d | xargs bat --diff
+#     git diff --name-only --relative --diff-filter=d | xargs bat --diff
 # }
 
 eval "$(fzf --bash)"
+# eval "$(batman --export-env)"
