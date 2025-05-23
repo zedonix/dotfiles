@@ -32,6 +32,10 @@ export EDITOR=nvim
 export VISUAL=nvim
 export SYSTEMD_EDITOR=nvim
 export MANPAGER="nvim +Man!"
+export PAGER="nvim -R"
+
+export AUR_REPO_ROOT=/home/custompkgs
+export AUR_PAGER="less"
 
 alias l="eza -l --icons=always --group-directories-first"
 alias ll="eza -la --icons=always --group-directories-first"
@@ -90,5 +94,6 @@ ex() {
 #     git diff --name-only --relative --diff-filter=d | xargs bat --diff
 # }
 
+source /usr/share/wikiman/widgets/widget.bash
 eval "$(fzf --bash)"
 # eval "$(batman --export-env)"
