@@ -34,9 +34,6 @@ export SYSTEMD_EDITOR=nvim
 export MANPAGER="nvim +Man!"
 export PAGER="nvim -R"
 
-export AUR_REPO_ROOT=/home/custompkgs
-export AUR_PAGER="less"
-
 alias l="eza -l --icons=always --group-directories-first"
 alias ll="eza -la --icons=always --group-directories-first"
 
