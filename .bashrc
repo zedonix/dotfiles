@@ -8,14 +8,14 @@ PS1='\n\033[1;36m[ \u@\h |\033[m \033[1;32m\w\033[m \033[1;36m]\033[m $(parse_gi
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] &&
     . /usr/share/bash-completion/bash_completion
 
-set -o vi
+# set -o vi
 
 shopt -s checkwinsize
 shopt -s histappend
 
 HISTCONTROL=ignoreboth
 
-export PATH=$PATH:$HOME/.scripts/bin
+export PATH=$PATH:$HOME/.scripts
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -38,9 +38,6 @@ export PAGER="nvim -R"
 
 alias l="eza -l --icons=always --group-directories-first"
 alias ll="eza -la --icons=always --group-directories-first"
-
-alias x="exit"
-alias c="clear"
 
 alias ls='ls --color=auto'
 alias ip='ip -color=auto'

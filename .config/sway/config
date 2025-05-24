@@ -17,9 +17,21 @@ set $htop '$term -a htop htop'
 set $nvtop '$term -a nvtop nvtop'
 set $color hyprpicker | wl-copy
 
+# set floating mode for generated windows
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+# set floating mode for specific applications
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="nvtop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="qalculate-gtk"] floating enable
+
 assign [app_id="firefox"] workspace 2
 assign [app_id="zed"] workspace 3
 assign [class="gimp-3.0"] workspace 4
@@ -139,14 +151,13 @@ mode "systemctl" {
 }
 bindsym $mod+Shift+p mode "systemctl"
 
-bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 5
-bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -5
-bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+bindsym --locked XF86AudioMute exec sh -c 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; audio.sh'
+bindsym --locked XF86AudioLowerVolume exec sh -c 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-; audio.sh'
+bindsym --locked XF86AudioRaiseVolume exec sh -c 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; audio.sh'
+bindsym --locked XF86AudioMicMute exec sh -c 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle; audio.sh'
 
-bindsym XF86MonBrightnessUp  exec swayosd-client --brightness +10
-bindsym XF86MonBrightnessDown exec swayosd-client --brightness -10
-
-bindsym --release Caps_Lock exec swayosd-client --caps-lock
+bindsym --locked XF86MonBrightnessDown exec sh -c 'brightnessctl set 5%-; brightness.sh'
+bindsym --locked XF86MonBrightnessUp exec sh -c 'brightnessctl set 5%+; brightness.sh'
 
 bar {
     position bottom
@@ -175,6 +186,8 @@ output * bg ./archLogo.png fill
 
 input "type:pointer" accel_profile flat
 input "type:keyboard" xkb_options caps:swapescape
+
+focus_follows_mouse no
 
 bindsym $mod+q exec ~/.config/sway/hide.sh
 
