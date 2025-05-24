@@ -90,10 +90,6 @@ Map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 Map('n', 'j', 'gj')
 Map('n', 'k', 'gk')
 
--- Vimwiki Configuration
-Map('n', '<leader>ww', ':VimwikiIndex<CR>')
-Map('n', '<leader>wd', ':VimwikiMakeDiaryNote<CR>')
-
 -- LSP Key Mappings
 Map('n', 'gd', '<cmd>vim.lsp.buf.definition<CR>')
 Map('n', 'gi', '<cmd>vim.lsp.buf.implementation<CR>')
@@ -185,3 +181,7 @@ later(function()
     vim.lsp.enable 'pyright'
     vim.lsp.enable 'bashls'
 end)
+
+-- Vimwiki Configuration
+Map('n', '<leader>ww', ':VimwikiIndex<CR>')
+Map('n', '<leader>wd', ':VimwikiMakeDiaryNote<CR>')
