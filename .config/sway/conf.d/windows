@@ -1,0 +1,20 @@
+# set floating mode for generated windows
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+# set floating mode for specific applications
+for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
+for_window [app_id="nvtop"] floating enable, resize set 1366 ppt 768 ppt
+for_window [app_id="qalculate-gtk"] floating enable
+
+# assign workspace to specific applications
+assign [app_id="firefox"] workspace 2
+assign [app_id="zed"] workspace 3
+assign [class="gimp-3.0"] workspace 4
+assign [class="discord"] workspace 5

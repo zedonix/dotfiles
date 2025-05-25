@@ -1,0 +1,13 @@
+### Input Configuration
+# Example for configuring input devices
+# input "2:14:SynPS/2_Synaptics_TouchPad" {
+#     dwt enabled
+#     tap enabled
+#     natural_scroll enabled
+#     middle_emulation enabled
+# }
+
+input "type:pointer" accel_profile flat
+input "type:keyboard" xkb_options caps:swapescape
+focus_follows_mouse no
+bindsym $mod+q exec hide.sh

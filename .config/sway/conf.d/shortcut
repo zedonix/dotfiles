@@ -1,0 +1,28 @@
+set $term exec foot
+set $menu exec fuzzel
+set $browser exec firefox
+set $fileBrowser exec pcmanfm
+set $calc exec qalculate-gtk
+
+set $paste 'cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy'
+set $screenshot grim -g "$(slurp)"
+set $htop '$term -a htop htop'
+set $nvtop '$term -a nvtop nvtop'
+set $color hyprpicker | wl-copy
+
+bindsym $mod+Return exec $term
+bindsym $mod+space exec $menu
+bindsym $mod+Shift+Return exec $browser
+bindsym $mod+e exec $fileBrowser
+bindsym $mod+c exec $calc
+
+bindsym $mod+p exec $paste
+bindsym Ctrl+Escape exec $htop
+bindsym Ctrl+Shift+Escape exec $nvtop
+
+bindsym $mod+n exec swaync-client -t -sw
+bindsym Ctrl+Delete exec swaync-client --hide-latest
+
+bindsym Print exec $screenshot - | tee "$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png" | wl-copy
+bindsym Ctrl+Print exec $screenshot "/tmp/screenshot.png" && gimp "/tmp/screenshot.png"
+bindsym Ctrl+Shift+p exec $color

@@ -15,7 +15,8 @@ shopt -s histappend
 
 HISTCONTROL=ignoreboth
 
-export PATH=$PATH:$HOME/.scripts
+export PATH=$PATH:$HOME/.scripts/bin
+export PATH=$PATH:/usr/share/sway-contrib
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"

@@ -5,73 +5,6 @@ set $down j
 set $up k
 set $right l
 
-set $term exec foot
-set $menu exec fuzzel
-set $browser exec firefox
-set $fileBrowser exec pcmanfm
-set $calc exec qalculate-gtk
-
-set $paste 'cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy'
-set $screenshot grim -g "$(slurp)"
-set $htop '$term -a htop htop'
-set $nvtop '$term -a nvtop nvtop'
-set $color hyprpicker | wl-copy
-
-# set floating mode for generated windows
-for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
-for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-
-# set floating mode for specific applications
-for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
-for_window [app_id="nvtop"] floating enable, resize set 1366 ppt 768 ppt
-for_window [app_id="qalculate-gtk"] floating enable
-
-assign [app_id="firefox"] workspace 2
-assign [app_id="zed"] workspace 3
-assign [class="gimp-3.0"] workspace 4
-assign [class="discord"] workspace 5
-
-exec wl-paste --type text --watch cliphist store
-exec wl-paste --type image --watch cliphist store
-exec wl-clip-persist --clipboard both --reconnect-tries 0
-
-exec_always autotiling
-
-exec swaync
-exec nm-applet
-exec udiskie --notify
-exec sway-audio-idle-inhibit
-exec swayosd-server
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000' \
-    timeout 300 'swaymsg "output * power off"' \
-    resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f -c 000000'
-
-bindsym $mod+Return exec $term
-bindsym $mod+space exec $menu
-bindsym $mod+Shift+Return exec $browser
-bindsym $mod+e exec $fileBrowser
-bindsym $mod+c exec $calc
-
-bindsym $mod+p exec $paste
-bindsym Ctrl+Escape exec $htop
-bindsym Ctrl+Shift+Escape exec $nvtop
-
-bindsym $mod+n exec swaync-client -t -sw
-bindsym Ctrl+Delete exec swaync-client --hide-latest
-
-bindsym Print exec $screenshot - | tee "$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png" | wl-copy
-bindsym Ctrl+Print exec $screenshot "/tmp/screenshot.png" && gimp "/tmp/screenshot.png"
-bindsym Ctrl+Shift+p exec $color
-
 floating_modifier $mod normal
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
@@ -151,18 +84,10 @@ mode "systemctl" {
 }
 bindsym $mod+Shift+p mode "systemctl"
 
-bindsym --locked XF86AudioMute exec sh -c 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; audio.sh'
-bindsym --locked XF86AudioLowerVolume exec sh -c 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-; audio.sh'
-bindsym --locked XF86AudioRaiseVolume exec sh -c 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; audio.sh'
-bindsym --locked XF86AudioMicMute exec sh -c 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle; audio.sh'
-
-bindsym --locked XF86MonBrightnessDown exec sh -c 'brightnessctl set 5%-; brightness.sh'
-bindsym --locked XF86MonBrightnessUp exec sh -c 'brightnessctl set 5%+; brightness.sh'
-
 bar {
     position bottom
     mode hide
-    status_command ~/.config/sway/bar.sh
+    status_command bar.sh
     colors {
         statusline #b8bb26
         background #282828
@@ -173,27 +98,9 @@ bar {
 }
 bindsym $mod+m bar mode toggle
 
-output * bg ./archLogo.png fill
-
-### Input Configuration
-# Example for configuring input devices
-# input "2:14:SynPS/2_Synaptics_TouchPad" {
-#     dwt enabled
-#     tap enabled
-#     natural_scroll enabled
-#     middle_emulation enabled
-# }
-
-input "type:pointer" accel_profile flat
-input "type:keyboard" xkb_options caps:swapescape
-
-focus_follows_mouse no
-
-bindsym $mod+q exec ~/.config/sway/hide.sh
-
 font pango: "Iosevka" Regular 9
 
 default_border pixel
 hide_edge_borders smart
 
-include /etc/sway/config.d/*
+include ~/.config/sway/conf.d/*
