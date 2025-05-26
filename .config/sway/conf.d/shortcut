@@ -17,8 +17,8 @@ bindsym $mod+e exec $fileBrowser
 bindsym $mod+c exec $calc
 
 bindsym $mod+p exec $paste
-bindsym Ctrl+Escape exec $htop
-bindsym Ctrl+Shift+Escape exec $nvtop
+bindsym Ctrl+Escape exec $nvtop
+bindsym Ctrl+Shift+Escape exec $htop
 
 bindsym $mod+n exec swaync-client -t -sw
 bindsym Ctrl+Delete exec swaync-client --hide-latest
