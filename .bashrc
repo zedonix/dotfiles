@@ -16,7 +16,6 @@ shopt -s histappend
 HISTCONTROL=ignoreboth
 
 export PATH=$PATH:$HOME/.scripts/bin
-export PATH=$PATH:/usr/share/sway-contrib
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -48,7 +47,6 @@ alias df="df -h"
 
 alias cp="cp -i"
 
-alias vi="nvim +VimwikiIndex"
 alias vim="nvim"
 
 alias ff="fastfetch"
@@ -71,6 +69,7 @@ ex() {
         case $1 in
         *.tar.bz2) tar xjf $1 ;;
         *.tar.gz) tar xzf $1 ;;
+        *.tar.xz) tar xf $1 ;;
         *.bz2) bunzip2 $1 ;;
         *.rar) unrar x $1 ;;
         *.gz) gunzip $1 ;;

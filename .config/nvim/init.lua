@@ -139,19 +139,6 @@ add {
     },
 }
 add {
-    source = 'vimwiki/vimwiki',
-    config = function()
-        vim.g.vimwiki_list = {
-            {
-                path = '~/vimwiki/',
-                syntax = 'markdown',
-                ext = '.md',
-            },
-        }
-        vim.g.vimwiki_global_ext = 0
-    end,
-}
-add {
     source = 'neovim/nvim-lspconfig',
 }
 
@@ -171,7 +158,7 @@ end)
 
 later(function()
     require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'lua', 'vimdoc', 'python', 'bash', 'c' },
+        ensure_installed = { 'lua', 'vimdoc', 'python', 'bash' },
         highlight = { enable = true },
     }
 end)
@@ -181,7 +168,3 @@ later(function()
     vim.lsp.enable 'pyright'
     vim.lsp.enable 'bashls'
 end)
-
--- Vimwiki Configuration
-Map('n', '<leader>ww', ':VimwikiIndex<CR>')
-Map('n', '<leader>wd', ':VimwikiMakeDiaryNote<CR>')
