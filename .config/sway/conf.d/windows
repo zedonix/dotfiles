@@ -7,6 +7,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+for_window [app_id="firefox" title="^Sign in.*"] floating enable
 
 # set floating mode for specific applications
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
@@ -16,5 +17,11 @@ for_window [app_id="qalculate-gtk"] floating enable
 # assign workspace to specific applications
 assign [app_id="firefox"] workspace 2
 assign [app_id="zed"] workspace 3
-assign [class="gimp-3.0"] workspace 4
-assign [class="discord"] workspace 5
+assign [class="discord"] workspace 4
+#assign [class="game"] workspace 5
+#assign [class="obsstudio"] workspace 6
+#assign [class="something"] workspace 7
+#assign [class="videditor"] workspace 8
+assign [class="gimp-3.0"] workspace 9
+assign [class="Logseq"] workspace 10
+assign [app_id="Logseq"] workspace 10

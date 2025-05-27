@@ -16,10 +16,10 @@ vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_transparent_background = 1
 
 -- Transparent Background Setup
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'NonText', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'NONE' })
+-- vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
+-- vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'NONE' })
+-- vim.api.nvim_set_hl(0, 'NonText', { bg = 'NONE' })
+-- vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'NONE' })
 
 -- Editor Options
 vim.opt.number = true
