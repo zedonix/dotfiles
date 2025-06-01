@@ -141,6 +141,9 @@ add {
 add {
     source = 'neovim/nvim-lspconfig',
 }
+add {
+    source = 'let-def/texpresso.vim',
+}
 
 -- Initialize Plugins
 local now, later = MiniDeps.now, MiniDeps.later
@@ -157,6 +160,13 @@ now(function()
 end)
 
 later(function()
+    vim.cmd([[
+        filetype plugin indent on
+        syntax enable
+    ]])
+end)
+
+later(function()
     require('nvim-treesitter.configs').setup {
         ensure_installed = { 'lua', 'vimdoc', 'python', 'bash' },
         highlight = { enable = true },
@@ -166,5 +176,6 @@ end)
 -- LSP
 later(function()
     vim.lsp.enable 'pyright'
+    vim.lsp.enable 'texlab'
     vim.lsp.enable 'bashls'
 end)

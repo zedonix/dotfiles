@@ -66,8 +66,8 @@
           "headset": " ",
           "default": ["", "", ""]
       },
-      "tooltip": false,
-      "on-click": "pavucontrol"
+      "tooltip": true,
+      "on-click": "easyeffects"
   },
 
   "battery": {

@@ -106,6 +106,12 @@ label:focus {
     background: #32302f;
     color: #3c3836;
 }
+
 #tray {
     background-color: #32302f;
+}
+
+#tray * {
+    margin-left: 3px;
+    margin-right: 3px;
 }
