@@ -84,21 +84,21 @@ mode "systemctl" {
 }
 bindsym $mod+Shift+p mode "systemctl"
 
-# bar {
-#     position bottom
-#     mode hide
-#     status_command bar.sh
-#     colors {
-#         statusline #b8bb26
-#         background #282828
-#         inactive_workspace #3c3836 #3c3836 #928374
-#         focused_workspace #458588 #458588 #ebdbb2
-#         active_workspace #b8bb26 #b8bb26 #282828
-#     }
-# }
-# bindsym $mod+m bar mode toggle
-
-exec --no-startup-id waybar
+bar {
+    position bottom
+    status_command bar.sh
+    colors {
+        statusline #d4be98
+        background #282828
+        inactive_workspace #3c3836 #3c3836 #928374
+        focused_workspace #3c3836 #3c3836 #e78a4e
+        active_workspace #d8a657 #d8a657 #282828
+        urgent_workspace #ea6962 #ea6962 #282828
+    }
+    tray_output primary
+    tray_padding 5
+}
+bindsym $mod+m bar mode toggle
 
 font pango: "Iosevka" Regular 9
 

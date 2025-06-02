@@ -5,7 +5,7 @@ set $fileBrowser exec pcmanfm
 set $calc exec qalculate-gtk
 
 set $paste 'cliphist list | fuzzel --dmenu --width=100 | cliphist decode | wl-copy'
-set $screenshot grim -g "$(slurp)"
+set $screenshot grim -g "$(slurp -o -r -c '#ff0000ff')" -t ppm - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png
 set $htop '$term -a htop htop'
 set $nvtop '$term -a nvtop nvtop'
 set $color hyprpicker | wl-copy
@@ -23,6 +23,5 @@ bindsym Ctrl+Shift+Escape exec $htop
 bindsym $mod+n exec swaync-client -t -sw
 bindsym Ctrl+Delete exec swaync-client --hide-latest
 
-bindsym Print exec $screenshot - | tee "$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png" | wl-copy
-bindsym Ctrl+Print exec $screenshot "/tmp/screenshot.png" && gimp "/tmp/screenshot.png"
+bindsym Print exec $screenshot
 bindsym Ctrl+Shift+p exec $color

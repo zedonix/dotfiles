@@ -1,3 +1,5 @@
 .config/tmux/plugins
 .config/GIMP/3.0/backups
 .config/GIMP/3.0/CrashLog
+
+lazy-lock.json
