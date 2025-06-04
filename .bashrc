@@ -53,7 +53,6 @@ alias vim="nvim"
 alias vi="nvim +VimwikiIndex"
 alias v="vifm"
 
-alias ff="fastfetch"
 alias nb="newsboat"
 alias img="swayimg"
 
