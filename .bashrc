@@ -51,6 +51,7 @@ alias cp="cp -i"
 
 alias vim="nvim"
 alias vi="nvim +VimwikiIndex"
+alias v="vifm"
 
 alias ff="fastfetch"
 alias nb="newsboat"
