@@ -1,6 +1,8 @@
 # set floating mode for generated windows
 for_window [title="(?:Open|Save|File) (?:File|Folder|As|Upload)"] floating enable
 for_window [title="(?:Open|Save|File) (?:File|Folder|As|Upload)"] resize set 800 600
+for_window [title="Library"] floating enable
+for_window [title="Library"] resize set 800 600
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
