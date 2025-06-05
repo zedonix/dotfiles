@@ -86,6 +86,7 @@ bindsym $mod+Shift+p mode "systemctl"
 
 bar {
     position bottom
+    mode hide
     status_command bar.sh
     colors {
         statusline #d4be98
@@ -95,8 +96,6 @@ bar {
         active_workspace #d8a657 #d8a657 #282828
         urgent_workspace #ea6962 #ea6962 #282828
     }
-    tray_output primary
-    tray_padding 5
 }
 bindsym $mod+m bar mode toggle
 
