@@ -80,11 +80,7 @@ if !has('win')
 endif
 
 " Set custom status line look
-if !has('win')
-    set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
-else
-    set statusline="  Hint: %z%= %A %15s %20d  "
-endif
+set statusline=" %f %A %10u:%-7g %20d "
 
 " Suppress "Permission denied" errors using syntax specific to GNU find
 if system("find --version | grep -c 'GNU findutils'") != 0
