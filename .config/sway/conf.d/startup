@@ -8,3 +8,6 @@ exec swaync
 exec nm-applet
 exec udiskie --notify
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+exec firefox
+exec discord
