@@ -59,14 +59,6 @@ alias img="swayimg"
 alias jrctl="journalctl -p 3 -xb"
 alias grub-mkconfig="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-burn() {
-    if [ $# -ne 2 ]; then
-        echo "Usage: burn <input_file> <output_device>"
-        return 1
-    fi
-    sudo dd if="$1" of="$2" bs=4M status=progress oflag=sync
-}
-
 ex() {
     if [ -f $1 ]; then
         case $1 in
