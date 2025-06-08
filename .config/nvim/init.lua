@@ -271,11 +271,6 @@ require('lazy').setup {
         keys = { '<leader>ww', '<leader>wi', '<Leader>w<Leader>w' },
     },
 
-    -- texpresso
-    {
-        'let-def/texpresso.vim',
-    },
-
     -- mini.completion
     {
         'echasnovski/mini.completion',
@@ -373,8 +368,7 @@ require('lazy').setup {
                 lua = { 'stylua' },
                 python = { 'black' },
                 sh = { 'shfmt' },
-                -- You can use 'stop_after_first' to run the first available formatter from the list
-                -- javascript = { "prettier", "prettier", stop_after_first = true },
+                javascript = { 'prettier' },
             },
         },
     },
