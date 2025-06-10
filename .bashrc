@@ -2,8 +2,7 @@
 [[ $- != *i* ]] && return
 
 PS1='\n\033[1;36m[ \u@\h |\033[m \033[1;32m\w\033[m \033[1;36m]\033[m \n\[\e[38;5;51m\]>\[\e[0m\] '
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] &&
-    . /usr/share/bash-completion/bash_completion
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
 
 #set -o vi
 
@@ -11,19 +10,17 @@ shopt -s checkwinsize
 shopt -s histappend
 
 HISTCONTROL=ignoreboth
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
 
-export PATH=$PATH:$HOME/.scripts/bin
+export PATH="$PATH:$HOME/.scripts/bin"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export YAZI_CONFIG_HOME="$HOME/.config/yazi"
-
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GOPATH="$XDG_DATA_HOME"/go
-export HISTFILE="${XDG_STATE_HOME}"/bash/history
 
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
