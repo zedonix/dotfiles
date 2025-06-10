@@ -101,6 +101,11 @@ bindsym $mod+m bar mode toggle
 
 font pango: "Iosevka" Regular 9
 
+# input * {
+#     xkb_layout us
+#     xkb_variant colemak
+# }
+
 default_border pixel
 hide_edge_borders smart
 
