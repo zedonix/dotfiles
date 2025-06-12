@@ -115,7 +115,7 @@ require('lazy').setup {
         'neovim/nvim-lspconfig',
         config = function()
             vim.lsp.enable 'pyright'
-            vim.lsp.enable 'texlab'
+            vim.lsp.enable 'ts_ls'
             vim.lsp.enable 'bashls'
             vim.lsp.enable 'lua_ls'
             vim.api.nvim_create_autocmd('LspAttach', {
@@ -369,6 +369,7 @@ require('lazy').setup {
                 python = { 'black' },
                 sh = { 'shfmt' },
                 javascript = { 'prettier' },
+                javascriptreact = { 'prettier' },
             },
         },
     },
