@@ -57,6 +57,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Keybindings
 vim.keymap.set('n', '<Leader>bi', '<cmd>ls<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>bd', '<cmd>bd<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>bn', '<cmd>bn<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>bp', '<cmd>bp<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', "'", '`', { noremap = true })
 vim.keymap.set('n', '`', "'", { noremap = true })
