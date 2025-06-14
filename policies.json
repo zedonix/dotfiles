@@ -1,29 +1,31 @@
 {
-  "policies": {
-    "PDFjs": {
-      "Enabled": false
-    },
-    "ExtensionSettings": {
-      "*": {
-        "installation_mode": "allowed",
-        "install_sources": ["https://addons.mozilla.org/"]
-      },
-      "{762f9885-5a13-4abd-9c77-433dcd38b8fd}": {
-        "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi"
-      },
-      "savewebpas@jeffersonscher.com": {
-        "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/save-webp-as-png-or-jpeg/latest.xpi"
-      },
-      "uBlock0@raymondhill.net": {
-        "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
-      },
-      "languagetool-webextension@languagetool.org": {
-        "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/languagetool/latest.xpi"
-      }
+    "policies": {
+        "NoDefaultBookmarks": true,
+        "PDFjs": {
+            "Enabled": false
+        },
+        "ExtensionSettings": {
+            "*": {
+                "installation_mode": "allowed",
+                "install_sources": ["https://addons.mozilla.org/"]
+            },
+            "{762f9885-5a13-4abd-9c77-433dcd38b8fd}": {
+                "installation_mode": "force_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi"
+            },
+            "savewebpas@jeffersonscher.com": {
+                "installation_mode": "force_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/save-webp-as-png-or-jpeg/latest.xpi"
+            },
+            "uBlock0@raymondhill.net": {
+                "installation_mode": "force_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+                "private_browsing": true
+            },
+            "languagetool-webextension@languagetool.org": {
+                "installation_mode": "force_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/languagetool/latest.xpi"
+            }
+        }
     }
-  }
 }

@@ -4,7 +4,7 @@
 PS1='\n\033[1;36m[ \u@\h |\033[m \033[1;32m\w\033[m \033[1;36m]\033[m \n\[\e[38;5;51m\]>\[\e[0m\] '
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
 
-#set -o vi
+set -o vi
 
 shopt -s checkwinsize
 shopt -s histappend
