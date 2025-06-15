@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 12,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/scratchpad",
+        "sway/mode"
+    ],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "pulseaudio",
+        "battery",
+        "tray"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": true
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+
+  "sway/mode": {
+    "format": "<span style='italic'>{}</span>",
+    "tooltip": false
+  },
+
+  "clock": {
+      "format": "{:%d-%m-%Y %H:%M}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+          "mode": "month",
+          "mode-mon-col": 3,
+          "weeks-pos": "left",
+          "on-scroll": 1,
+          "format": {
+              "months": "<span color='#d4be98'><b>{}</b></span>",
+              "days": "<span color='#d4be98'><b>{}</b></span>",
+              "weeks": "<span color='#a9b665'><b>W{}</b></span>",
+              "weekdays": "<span color='#d8a657'><b>{}</b></span>",
+              "today": "<span color='#e78a4e'><b><u>{}</u></b></span>"
+          }
+      },
+      "actions": {
+          "on-click-middle": "mode",
+          "on-scroll-up": "shift_up",
+          "on-scroll-down": "shift_down"
+      }
+  },
+
+  "pulseaudio": {
+      "scroll-step": 1,
+      "format": "{volume}% {icon} {format_source}",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": "<span foreground='#ea6962'>  {format_source}</span>",
+      "format-muted": "<span foreground='#ea6962'> </span> {format_source}",
+      "format-source": "{volume}% ",
+      "format-source-muted": " <span foreground='#ea6962'></span>",
+      "format-icons": {
+          "headphone": " ",
+          "headset": " ",
+          "default": ["", "", ""]
+      },
+      "tooltip": true,
+      "on-click": "easyeffects"
+  },
+
+  "battery": {
+      "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+      },
+      "format": "{capacity}% {icon}",
+      "format-full": "{capacity}% {icon}",
+      "format-charging": "{capacity}% ",
+      "format-plugged": "{capacity}% ",
+      "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+  }
+}

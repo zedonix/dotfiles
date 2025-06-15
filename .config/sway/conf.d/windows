@@ -15,9 +15,12 @@ for_window [app_id="firefox" title="^Sign in.*"] floating enable
 for_window [app_id="htop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="nvtop"] floating enable, resize set 1366 ppt 768 ppt
 for_window [app_id="qalculate-gtk"] floating enable
+for_window [app_id="foot" title="float"] floating enable
+for_window [app_id="org.gnome.FileRoller"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
 
 # assign workspace to specific applications
-assign [app_id="firefox"] workspace 2
+# assign [app_id="firefox"] workspace 2
 assign [class="discord"] workspace 3
 #assign [class="game"] workspace 5
 #assign [class="obsstudio"] workspace 6

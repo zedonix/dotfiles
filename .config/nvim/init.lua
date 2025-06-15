@@ -269,7 +269,7 @@ require('lazy').setup {
             vim.g.vimwiki_ext2syntax = { ['.md'] = 'markdown' }
         end,
         event = 'BufEnter *.md',
-        cmd = { 'VimwikiIndex', 'VimwikiDiaryIndex' },
+        cmd = { 'VimwikiIndex', 'VimwikiDiaryIndex', 'VimwikiMakeDiaryNote' },
         keys = { '<leader>ww', '<leader>wi', '<Leader>w<Leader>w' },
     },
 

@@ -2,6 +2,7 @@ exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
 exec wl-clip-persist --clipboard both --reconnect-tries 0
 
+exec waybar
 exec swaync
 exec nm-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

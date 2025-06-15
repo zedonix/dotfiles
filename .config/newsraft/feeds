@@ -1,0 +1,36 @@
+# Blog feeds
+@ Blog
+https://archlinux.org/feeds/news/ "Arch Linux News"
+https://opensourcemusings.com/feed.xml "Open Source Musings"
+
+# News feeds (YouTube channels)
+@ News
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw "The Linux Experiment"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0W_BIuwk8D0Bv4THbVZZOQ "Surveillance Report"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCs6KfncB4OV6Vug4o_bzijg "Techlore"
+
+# Entertain feeds (YouTube channels)
+@ Entertain
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZXW8E1__d5tZb-wLFOt8TQ "Bog"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZzfw1NZ40-RLtRPVSNUHOw "A-dn"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtMVHI3AJD4Qk4hcbZnI9ZQ "SomeOrdinaryGamers"
+
+# Linux feeds (YouTube channels)
+@ Linux
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "Brodie Robertson"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCylGUf9BvQooEFjgdNudoQg "The Linux Cast"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCwHwDuNd9lCdA7chyyquDXw "Penguins Bread"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "Mental Outlaw"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCg6gPGh8HU2U01vaFCAsvmQ "Chris Titus Tech"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "DistroTube"
+
+# Reddit feeds
+@ Reddit
+https://www.reddit.com/r/archlinux/new.rss "r/archlinux"
+https://www.reddit.com/r/linux/new.rss "r/linux"
+https://www.reddit.com/r/commandline/new.rss "r/commandline"
+https://www.reddit.com/r/unixporn/new.rss "r/unixporn"
+https://www.reddit.com/r/Btechtards/new.rss "r/Btechtards"
+https://www.reddit.com/r/developersIndia/new.rss "r/developersIndia"
+https://www.reddit.com/r/linuxhardware/new.rss "r/linuxhardware"
+https://www.reddit.com/r/swaywm/new.rss "r/swaywm"

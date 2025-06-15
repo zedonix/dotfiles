@@ -1,0 +1,12 @@
+color-list-item default default
+color-list-item-unread bold yellow default
+color-list-item-important bold magenta default
+color-list-feed bold white default
+color-list-feed-unread bold yellow default
+color-list-feed-failed bold red default
+color-list-section bold blue default
+color-list-section-unread bold yellow default
+color-list-section-failed bold red default
+color-status bold green default
+color-status-info bold cyan default
+color-status-fail bold red default

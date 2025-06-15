@@ -9,12 +9,19 @@ set $screenshot grim -g "$(slurp -o -r -c '#ff0000ff')" -t ppm - | satty --filen
 set $htop '$term -a htop htop'
 set $nvtop '$term -a nvtop nvtop'
 set $color hyprpicker | wl-copy
+set $wiki '$term --title="float" -e nvim +VimwikiIndex'
+set $diary '$term --title="float" -e nvim +VimwikiMakeDiaryNote'
+set $news '$term --title="float" -e newsraft'
 
 bindsym $mod+Return exec $term
 bindsym $mod+space exec $menu
 bindsym $mod+Shift+Return exec $browser
 bindsym $mod+e exec $fileBrowser
 bindsym $mod+c exec $calc
+
+bindsym $mod+Shift+v exec $wiki
+bindsym $mod+Shift+d exec $diary
+bindsym $mod+Shift+n exec $news
 
 bindsym $mod+p exec $paste
 bindsym Ctrl+Escape exec $nvtop

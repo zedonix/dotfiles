@@ -7,5 +7,7 @@ bindsym --locked XF86MonBrightnessDown exec sh -c 'brightnessctl set 5%-; bright
 bindsym --locked XF86MonBrightnessUp exec sh -c 'brightnessctl set 5%+; brightness.sh'
 
 bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioPause exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
+bindsym --locked XF86AudioStop exec playerctl stop
